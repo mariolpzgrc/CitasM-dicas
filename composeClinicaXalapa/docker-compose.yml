@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    build: ./dockerClinicaXalapa
+    restart: always
+    container_name: web
+    environment:
+      - PUERTO=8000
+      - DOMINIO=0.0.0.0
+    volumes:
+      - ./dockerClinicaXalapa/clinicaXalapa:/code
+    ports:
+      - "9997:8000"
+  bd:
+    image: ${mariadb}
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=clinicaXalapa
+    volumes:
+      - /tmp/data:/var/lib/mysql

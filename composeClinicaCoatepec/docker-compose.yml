@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    build: ./dockerClinicaCoatepec
+    restart: always
+    container_name: web
+    environment:
+      - PUERTO=8000
+      - DOMINIO=0.0.0.0
+    volumes:
+      - ./dockerTClinicaCoatepec/clinicaCoatepec:/code
+    ports:
+      - "9998:8000"
+  bd:
+    image: ${mariadb}
+    restart: always
+    environment:
+      - MYSQL_ROOT_PASSWORD=123456
+      - MYSQL_DATABASE=clinicaCoatepec
+    volumes:
+      - /tmp/data:/var/lib/mysql
