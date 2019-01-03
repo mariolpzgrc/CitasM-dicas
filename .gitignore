@@ -18,3 +18,6 @@ out/
 #File for docker
 composeClinicaCoatepec/data
 composeClinicaXalapa/data
+
+#.vscode
+*.vscode

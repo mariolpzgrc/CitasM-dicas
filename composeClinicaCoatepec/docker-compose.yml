@@ -7,7 +7,7 @@ services:
       - PUERTO=8000
       - DOMINIO=0.0.0.0
     volumes:
-      - ./dockerTClinicaCoatepec/clinicaCoatepec:/code
+      - ./dockerClinicaCoatepec/clinicaCoatepec:/code
     ports:
       - "9998:8000"
   bd:
