@@ -3,8 +3,7 @@ services:
   web:
     build: ./dockerClinicaCoatepec
     restart: always
-    container_name: web
-    environment:
+    container_name: webClinicaCoatepec
       - PUERTO=8000
       - DOMINIO=0.0.0.0
     volumes:

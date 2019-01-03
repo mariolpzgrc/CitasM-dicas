@@ -3,7 +3,7 @@ services:
   web:
     build: ./dockerClinicaXalapa
     restart: always
-    container_name: web
+    container_name: webClinicaXalapa
     environment:
       - PUERTO=8000
       - DOMINIO=0.0.0.0
